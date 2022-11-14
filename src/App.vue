@@ -1,26 +1,24 @@
 <script setup>
+import {ref, onMounted, computed, watch} from 'vue'
 
+const todos = ref([])
+const name = ref('')
+
+const input_content = ref('')
+const input_category = ref(null)
+
+const todo_asc = computed(() => todos.value.sort((a, b) => {
+    return b.createdAt - a.createdAt
+}))
 </script>
 
 <template>
-  <div>
-  
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
+      <main class="app">
+           <section class="greeting">
+                <h2 class="title">
+                   what's up, <input type="text" placeholder="Name here"  v-model="name" />
+                </h2>
+           </section>
+      </main>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
