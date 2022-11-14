@@ -117,4 +117,3 @@ onMounted(() => {
 	</main>
 </template>
 Footer
-© 2022 GitHub, Inc.
